@@ -1,0 +1,164 @@
+---
+title: "PiB"
+output: html_document
+---
+
+
+# CONTRACT REGION OF INTERESTED EXPORTS
+
+## Page 1 contract exports
+```{r}
+
+p1_initials_II <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 1 contract exports/190910,21h19_II initials page 1.txt", sep = "")
+
+p1_initials_III <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 1 contract exports/190910,21h19_III initials page 1.txt", sep = "")
+
+p1_initials_SF <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 1 contract exports/190910,21h19_SF initials page 1.txt", sep = "")
+
+```
+
+
+## Page 2 contract exports
+```{r}
+
+p2_initials_II <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 2 contract exports/190910,23h44_II initials page 2.txt", sep = "")
+
+p2_initials_III <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 2 contract exports/190910,23h44_III initials page 2.txt", sep = "")
+
+p2_initials_SF <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 2 contract exports/190910,23h44_SF initials page 2.txt", sep = "")
+
+```
+
+
+## Page 3 contract export
+```{r}
+
+p3_initials_II <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 3 contract export/190910,01h50_II initials signature page 3.txt", sep = "")
+
+p3_initials_III <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 3 contract export/190910,01h50_III initials signature page 3.txt", sep = "")
+
+p3_initials_SF <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 3 contract export/190910,01h50_SFsignature page 3.txt", sep = "")
+
+```
+
+# INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS
+
+## full squares
+
+```{r}
+
+sq1_under_no1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square 1 underneat number 1.txt", sep = "")
+
+sq1_under_no2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square 1 underneat number 2.txt", sep = "")
+
+sq2_under_no1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square 2 underneat number 1.txt", sep = "")
+
+sq_beside_no4 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square beside number 4.txt", sep = "")
+
+sq_under_no3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square underneat number 3.txt", sep = "")
+
+sq2_under_no2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/II full square ink under number 2.txt", sep = "")
+
+sq2_under_no3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/II full square ink under number 3.txt", sep = "")
+
+```
+
+## numbers
+
+```{r}
+
+sq_no2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares analysis_number 2.txt", sep = "")
+
+sq_no3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares analysis_number 3.txt", sep = "")
+
+sq_no4 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares analysis_number 4.txt", sep = "")
+
+sq_no1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares analysis_number1.txt", sep = "")
+
+sq_no2_II <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares_analysis_number 2.txt", sep = "")
+
+sq_no5 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares_analysis_number 5.txt", sep = "")
+
+sq_no6 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares_analysis_number 6.txt", sep = "")
+
+```
+
+## split squares_each square 3 ROI
+
+```{r}
+
+# square II under no1
+sqII_no1_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/II square ink under number 1_ROI1.txt", sep = "")
+
+sqII_no1_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/II square ink under number 1_ROI2.txt", sep = "")
+
+sqII_no1_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/II square ink under number 1_ROI3.txt", sep = "")
+
+# square above no5
+sq_no5_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 5_ROI1.txt", sep = "")
+
+sq_no5_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 5_ROI2.txt", sep = "")
+
+sq_no5_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 5_ROI3.txt", sep = "")
+
+# square above no6
+sq_no6_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 6_ROI1.txt", sep = "")
+
+sq_no6_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 6_ROI2.txt", sep = "")
+
+sq_no6_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 6_ROI3.txt", sep = "")
+
+# square beside no4
+sq_no4_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink beside number 4_ROI1.txt", sep = "")
+
+sq_no4_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink beside number 4_ROI2.txt", sep = "")
+
+sq_no4_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink beside number 4_ROI3.txt", sep = "")
+
+# square I under no1
+sqI_no1_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 1_ROI1.txt", sep = "")
+
+sqI_no1_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 1_ROI2.txt", sep = "")
+
+sqI_no1_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 1_ROI3.txt", sep = "")
+
+# square under no2
+sq_no2_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 2_ROI1.txt", sep = "")
+
+sq_no2_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 2_ROI2.txt", sep = "")
+
+sq_no2_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 2_ROI3.txt", sep = "")
+
+# square under no3
+sq_no3_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 3_ROI1.txt", sep = "")
+
+sq_no3_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 3_ROI2.txt", sep = "")
+
+sq_no3_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 3_ROI3.txt", sep = "")
+
+
+```
+
+
+# STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS
+
+```{r}
+
+strike1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 1.txt", sep = "")
+
+strike2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 2.txt", sep = "")
+
+strike3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 3.txt", sep = "")
+
+strike4 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 4.txt", sep = "")
+
+strike5 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 5.txt", sep = "")
+
+strike6 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 6.txt", sep = "")
+
+```
+
+
+
+
+
