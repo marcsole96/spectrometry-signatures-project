@@ -3,17 +3,28 @@ title: "PiB"
 output: html_document
 ---
 
+```{r}
+
+library(tidyverse)
+
+```
+
 
 # CONTRACT REGION OF INTERESTED EXPORTS
 
 ## Page 1 contract exports
 ```{r}
 
-p1_initials_II <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 1 contract exports/190910,21h19_II initials page 1.txt", sep = "")
+p1_initials_II <- read.table(file = "ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 1 contract exports/190910,21h19_II initials page 1.txt", sep = "")
 
-p1_initials_III <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 1 contract exports/190910,21h19_III initials page 1.txt", sep = "")
+p1_initials_III <- read.table(file = "ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 1 contract exports/190910,21h19_III initials page 1.txt", sep = "")
 
-p1_initials_SF <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 1 contract exports/190910,21h19_SF initials page 1.txt", sep = "")
+p1_initials_SF <- read.table(file = "ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 1 contract exports/190910,21h19_SF initials page 1.txt", sep = "")
+
+
+colnames(p1_initials_SF) <- c("spectrum", "P1 SF Intensity")
+colnames(p1_initials_II) <- c("spectrum", "P1 II Intensity")
+colnames(p1_initials_III) <- c("spectrum", "P1 III Intensity")
 
 ```
 
@@ -21,11 +32,15 @@ p1_initials_SF <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/R
 ## Page 2 contract exports
 ```{r}
 
-p2_initials_II <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 2 contract exports/190910,23h44_II initials page 2.txt", sep = "")
+p2_initials_II <- read.table(file = "ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 2 contract exports/190910,23h44_II initials page 2.txt", sep = "")
 
-p2_initials_III <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 2 contract exports/190910,23h44_III initials page 2.txt", sep = "")
+p2_initials_III <- read.table(file = "ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 2 contract exports/190910,23h44_III initials page 2.txt", sep = "")
 
-p2_initials_SF <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 2 contract exports/190910,23h44_SF initials page 2.txt", sep = "")
+p2_initials_SF <- read.table(file = "ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 2 contract exports/190910,23h44_SF initials page 2.txt", sep = "")
+
+colnames(p2_initials_SF) <- c("spectrum", "P2 SF Intensity")
+colnames(p2_initials_II) <- c("spectrum", "P2 II Intensity")
+colnames(p2_initials_III) <- c("spectrum", "P2 III Intensity")
 
 ```
 
@@ -33,11 +48,15 @@ p2_initials_SF <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/R
 ## Page 3 contract export
 ```{r}
 
-p3_initials_II <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 3 contract export/190910,01h50_II initials signature page 3.txt", sep = "")
+p3_initials_II <- read.table(file = "ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 3 contract export/190910,01h50_II initials signature page 3.txt", sep = "")
 
-p3_initials_III <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 3 contract export/190910,01h50_III initials signature page 3.txt", sep = "")
+p3_initials_III <- read.table(file = "ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 3 contract export/190910,01h50_III initials signature page 3.txt", sep = "")
 
-p3_initials_SF <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 3 contract export/190910,01h50_SFsignature page 3.txt", sep = "")
+p3_initials_SF <- read.table(file = "ROI export from squares strikes and contract/CONTRACT REGION OF INTERESTED EXPORTS/Page 3 contract export/190910,01h50_SFsignature page 3.txt", sep = "")
+
+colnames(p3_initials_SF) <- c("spectrum", "P3 SF Intensity")
+colnames(p3_initials_II) <- c("spectrum", "P3 II Intensity")
+colnames(p3_initials_III) <- c("spectrum", "P3 III Intensity")
 
 ```
 
@@ -47,19 +66,27 @@ p3_initials_SF <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/R
 
 ```{r}
 
-sq1_under_no1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square 1 underneat number 1.txt", sep = "")
+sq1_under_no1 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square 1 underneat number 1.txt", sep = "")
 
-sq1_under_no2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square 1 underneat number 2.txt", sep = "")
+sq1_under_no2 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square 1 underneat number 2.txt", sep = "")
 
-sq2_under_no1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square 2 underneat number 1.txt", sep = "")
+sq2_under_no1 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square 2 underneat number 1.txt", sep = "")
 
-sq_beside_no4 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square beside number 4.txt", sep = "")
+sq_beside_no4 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square beside number 4.txt", sep = "")
 
-sq_under_no3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square underneat number 3.txt", sep = "")
+sq1_under_no3 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/Full square underneat number 3.txt", sep = "")
 
-sq2_under_no2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/II full square ink under number 2.txt", sep = "")
+sq2_under_no2 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/II full square ink under number 2.txt", sep = "")
 
-sq2_under_no3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/II full square ink under number 3.txt", sep = "")
+sq2_under_no3 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/full squares/II full square ink under number 3.txt", sep = "")
+
+colnames(sq1_under_no1) <- c("spectrum", "SQ1 U1 Intensity")
+colnames(sq1_under_no2) <- c("spectrum", "SQ1 U2 Intensity")
+colnames(sq2_under_no1) <- c("spectrum", "SQ2 U1 Intensity")
+colnames(sq_beside_no4) <- c("spectrum", "SQ B4 Intensity")
+colnames(sq1_under_no3) <- c("spectrum", "SQ1 U3 Intensity")
+colnames(sq2_under_no2) <- c("spectrum", "SQ2 U2 Intensity")
+colnames(sq2_under_no3) <- c("spectrum", "SQ2 U3 Intensity")
 
 ```
 
@@ -67,19 +94,27 @@ sq2_under_no3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/RO
 
 ```{r}
 
-sq_no2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares analysis_number 2.txt", sep = "")
+sq_no2 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares analysis_number 2.txt", sep = "")
 
-sq_no3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares analysis_number 3.txt", sep = "")
+sq_no3 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares analysis_number 3.txt", sep = "")
 
-sq_no4 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares analysis_number 4.txt", sep = "")
+sq_no4 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares analysis_number 4.txt", sep = "")
 
-sq_no1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares analysis_number1.txt", sep = "")
+sq_no1 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares analysis_number1.txt", sep = "")
 
-sq_no2_II <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares_analysis_number 2.txt", sep = "")
+sq_no2_II <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares_analysis_number 2.txt", sep = "")
 
-sq_no5 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares_analysis_number 5.txt", sep = "")
+sq_no5 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares_analysis_number 5.txt", sep = "")
 
-sq_no6 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares_analysis_number 6.txt", sep = "")
+sq_no6 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/numbers/squares_analysis_number 6.txt", sep = "")
+
+colnames(sq_no2) <- c("spectrum", "SQ 2 Intensity")
+colnames(sq_no3) <- c("spectrum", "SQ 3 Intensity")
+colnames(sq_no4) <- c("spectrum", "SQ 4 Intensity")
+colnames(sq_no1) <- c("spectrum", "SQ 1 Intensity")
+colnames(sq_no2_II) <- c("spectrum", "SQ2 2 Intensity")  # I think this df should be sq2 from number 1
+colnames(sq_no5) <- c("spectrum", "SQ 5 Intensity")
+colnames(sq_no6) <- c("spectrum", "SQ 6 Intensity")
 
 ```
 
@@ -88,54 +123,67 @@ sq_no6 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI expor
 ```{r}
 
 # square II under no1
-sqII_no1_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/II square ink under number 1_ROI1.txt", sep = "")
+sqII_no1_ROI1 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/II square ink under number 1_ROI1.txt", sep = "")
+sqII_no1_ROI2 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/II square ink under number 1_ROI2.txt", sep = "")
+sqII_no1_ROI3 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/II square ink under number 1_ROI3.txt", sep = "")
 
-sqII_no1_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/II square ink under number 1_ROI2.txt", sep = "")
-
-sqII_no1_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/II square ink under number 1_ROI3.txt", sep = "")
+colnames(sqII_no1_ROI1) <- c("spectrum", "SQ2 1 ROI1 Intensity")
+colnames(sqII_no1_ROI2) <- c("spectrum", "SQ2 1 ROI2 Intensity")
+colnames(sqII_no1_ROI3) <- c("spectrum", "SQ2 1 ROI3 Intensity")
 
 # square above no5
-sq_no5_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 5_ROI1.txt", sep = "")
+sq_no5_ROI1 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 5_ROI1.txt", sep = "")
+sq_no5_ROI2 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 5_ROI2.txt", sep = "")
+sq_no5_ROI3 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 5_ROI3.txt", sep = "")
 
-sq_no5_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 5_ROI2.txt", sep = "")
-
-sq_no5_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 5_ROI3.txt", sep = "")
+colnames(sq_no5_ROI1) <- c("spectrum", "SQ 5 ROI1 Intensity")
+colnames(sq_no5_ROI2) <- c("spectrum", "SQ 5 ROI2 Intensity")
+colnames(sq_no5_ROI3) <- c("spectrum", "SQ 5 ROI3 Intensity")
 
 # square above no6
-sq_no6_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 6_ROI1.txt", sep = "")
+sq_no6_ROI1 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 6_ROI1.txt", sep = "")
+sq_no6_ROI2 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 6_ROI2.txt", sep = "")
+sq_no6_ROI3 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 6_ROI3.txt", sep = "")
 
-sq_no6_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 6_ROI2.txt", sep = "")
-
-sq_no6_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink above number 6_ROI3.txt", sep = "")
+colnames(sq_no6_ROI1) <- c("spectrum", "SQ 6 ROI1 Intensity")
+colnames(sq_no6_ROI2) <- c("spectrum", "SQ 6 ROI2 Intensity")
+colnames(sq_no6_ROI3) <- c("spectrum", "SQ 6 ROI3 Intensity")
 
 # square beside no4
-sq_no4_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink beside number 4_ROI1.txt", sep = "")
+sq_no4_ROI1 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink beside number 4_ROI1.txt", sep = "")
+sq_no4_ROI2 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink beside number 4_ROI2.txt", sep = "")
+sq_no4_ROI3 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink beside number 4_ROI3.txt", sep = "")
 
-sq_no4_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink beside number 4_ROI2.txt", sep = "")
-
-sq_no4_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink beside number 4_ROI3.txt", sep = "")
+colnames(sq_no4_ROI1) <- c("spectrum", "SQ 4 ROI1 Intensity")
+colnames(sq_no4_ROI2) <- c("spectrum", "SQ 4 ROI2 Intensity")
+colnames(sq_no4_ROI3) <- c("spectrum", "SQ 4 ROI3 Intensity")
 
 # square I under no1
-sqI_no1_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 1_ROI1.txt", sep = "")
+sqI_no1_ROI1 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 1_ROI1.txt", sep = "")
+sqI_no1_ROI2 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 1_ROI2.txt", sep = "")
+sqI_no1_ROI3 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 1_ROI3.txt", sep = "")
 
-sqI_no1_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 1_ROI2.txt", sep = "")
-
-sqI_no1_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 1_ROI3.txt", sep = "")
+colnames(sqI_no1_ROI1) <- c("spectrum", "SQI 1 ROI1 Intensity")
+colnames(sqI_no1_ROI2) <- c("spectrum", "SQI 1 ROI2 Intensity")
+colnames(sqI_no1_ROI3) <- c("spectrum", "SQI 1 ROI3 Intensity")
 
 # square under no2
-sq_no2_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 2_ROI1.txt", sep = "")
+sq_no2_ROI1 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 2_ROI1.txt", sep = "")
+sq_no2_ROI2 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 2_ROI2.txt", sep = "")
+sq_no2_ROI3 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 2_ROI3.txt", sep = "")
 
-sq_no2_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 2_ROI2.txt", sep = "")
-
-sq_no2_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 2_ROI3.txt", sep = "")
+colnames(sq_no2_ROI1) <- c("spectrum", "SQ 2 ROI1 Intensity")
+colnames(sq_no2_ROI2) <- c("spectrum", "SQ 2 ROI2 Intensity")
+colnames(sq_no2_ROI3) <- c("spectrum", "SQ 2 ROI3 Intensity")
 
 # square under no3
-sq_no3_ROI1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 3_ROI1.txt", sep = "")
+sq_no3_ROI1 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 3_ROI1.txt", sep = "")
+sq_no3_ROI2 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 3_ROI2.txt", sep = "")
+sq_no3_ROI3 <- read.table(file = "ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 3_ROI3.txt", sep = "")
 
-sq_no3_ROI2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 3_ROI2.txt", sep = "")
-
-sq_no3_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/INK SQUARE ANALYSIS (TRAINING SET)-roi EXPORTS/split squares_each square 3 ROI/square ink under number 3_ROI3.txt", sep = "")
-
+colnames(sq_no3_ROI1) <- c("spectrum", "SQ 3 ROI1 Intensity")
+colnames(sq_no3_ROI2) <- c("spectrum", "SQ 3 ROI2 Intensity")
+colnames(sq_no3_ROI3) <- c("spectrum", "SQ 3 ROI3 Intensity")
 
 ```
 
@@ -144,19 +192,49 @@ sq_no3_ROI3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI 
 
 ```{r}
 
-strike1 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 1.txt", sep = "")
+strike1 <- read.table(file = "ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 1.txt", sep = "")
 
-strike2 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 2.txt", sep = "")
+strike2 <- read.table(file = "ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 2.txt", sep = "")
 
-strike3 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 3.txt", sep = "")
+strike3 <- read.table(file = "ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 3.txt", sep = "")
 
-strike4 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 4.txt", sep = "")
+strike4 <- read.table(file = "ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 4.txt", sep = "")
 
-strike5 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 5.txt", sep = "")
+strike5 <- read.table(file = "ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 5.txt", sep = "")
 
-strike6 <- read.table(file = "C:/Users/sfada/Desktop/Bioinformatics/PiB/ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 6.txt", sep = "")
+strike6 <- read.table(file = "ROI export from squares strikes and contract/STRIKES ANALYSIS (I TEST SET)-ROI EXPORTS/strike 6.txt", sep = "")
+
+colnames(strike1) <- c("spectrum", "strike1 Intensity")
+colnames(strike2) <- c("spectrum", "strike2 Intensity")
+colnames(strike3) <- c("spectrum", "strike3 Intensity")
+colnames(strike4) <- c("spectrum", "strike4 Intensity")
+colnames(strike5) <- c("spectrum", "strike5 Intensity")
+colnames(strike6) <- c("spectrum", "strike6 Intensity")
 
 ```
+
+
+```{r}
+
+test_data <- cbind(strike1, strike2[2], strike3[2], strike4[2], strike5[2], strike6[2])
+training_data1 <- cbind(sq1_under_no1, sq2_under_no1[2], sq1_under_no2[2], sq2_under_no2[2], sq1_under_no3[2], sq2_under_no3[2])
+training_data2 <- cbind(sq_no1, sq_no2[2], sq_no2_II[2], sq_no3[2], sq_no4[2], sq_no5[2], sq_no6[2])
+training_data3 <- cbind(sqI_no1_ROI1, sqI_no1_ROI2[2], sqI_no1_ROI3[2], sqII_no1_ROI1[2], sqII_no1_ROI2[2], sqII_no1_ROI3[2], sq_no2_ROI1[2], sq_no2_ROI2[2], sq_no2_ROI3[2], sq_no3_ROI1[2], sq_no3_ROI2[2], sq_no3_ROI3[2], sq_no4_ROI1[2], sq_no4_ROI2[2], sq_no4_ROI3[2], sq_no5_ROI1[2], sq_no5_ROI2[2], sq_no5_ROI3[2], sq_no6_ROI1[2], sq_no6_ROI2[2], sq_no6_ROI3[2])
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
