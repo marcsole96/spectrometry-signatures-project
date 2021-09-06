@@ -6,6 +6,13 @@ editor_options:
 ---
 
 ```{r}
+library(workflowr)
+# Start a new workflowr project
+wflow_build()
+```
+
+
+```{r}
 library(tidyverse)
 library(ggplot2)
 library(ggfortify)
@@ -292,3 +299,36 @@ test$labels=row.names(test)
 pca_res <- prcomp(test[0:4500], scale. = TRUE)
 autoplot(pca_res,data=test,colour="labels", label=T)
 ```
+
+#tSNE
+## Test_data
+
+
+```{r}
+#t-SNE is not deterministic. There is some inherent stochasticity with the generation of probability distributions
+
+set.seed(14)
+#doing t-SNE
+
+tsne <- Rtsne(test_data[,-1], dims = 2, perplexity=30, 
+              verbose=FALSE, max_iter = 500)
+```
+
+```{r}
+test<-melt(test_data, id="spectrum")
+
+test<- test %>% spread(key="value", value="variable")
+
+ggplot(test, aes(spectrum,value,colour=variable)) + geom_point()
+```
+
+
+
+```{r}
+lowd_map<- data.frame(tsne$Y)
+lowd_map$label <- factor(test$variable)
+
+ggplot(lowd_map, aes(x= X1, y = X2)) + geom_point() + ggtitle("tSNE")
+```
+
+
