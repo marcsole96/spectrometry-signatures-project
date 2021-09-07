@@ -6,13 +6,6 @@ editor_options:
 ---
 
 ```{r}
-library(workflowr)
-# Start a new workflowr project
-wflow_build()
-```
-
-
-```{r}
 library(tidyverse)
 library(ggplot2)
 library(ggfortify)
@@ -232,8 +225,40 @@ training_data3 <- cbind(sqI_no1_ROI1, sqI_no1_ROI2[2], sqI_no1_ROI3[2], sqII_no1
 
 ```
 
+\#Simple intensities plots:
+
+Testdata
+
+```{r}
+test<-melt(test_data, id="spectrum")
+ggplot(test, aes(spectrum,value,colour=variable)) + geom_point()
+```
+
+Training data 1
+
+```{r}
+test<-melt(training_data1, id="spectrum")
+ggplot(test, aes(spectrum,value,colour=variable)) + geom_point()
+```
+
+Training data 2
+
+```{r}
+test<-melt(training_data2, id="spectrum")
+ggplot(test, aes(spectrum,value,colour=variable)) + geom_point()
+```
+
+Training data 2
+
+```{r}
+test<-melt(training_data3, id="spectrum")
+ggplot(test, aes(spectrum,value,colour=variable)) + geom_point()
+```
+
 # PCAs
+
 ## Test_data
+
 Changing the columns so they are rows:
 
 ```{r}
@@ -300,9 +325,7 @@ pca_res <- prcomp(test[0:4500], scale. = TRUE)
 autoplot(pca_res,data=test,colour="labels", label=T)
 ```
 
-#tSNE
-## Test_data
-
+\#tSNE \#\# Test_data
 
 ```{r}
 #t-SNE is not deterministic. There is some inherent stochasticity with the generation of probability distributions
@@ -312,23 +335,64 @@ set.seed(14)
 
 tsne <- Rtsne(test_data[,-1], dims = 2, perplexity=30, 
               verbose=FALSE, max_iter = 500)
+lowd_map<- data.frame(tsne$Y)
+
+ggplot(lowd_map, aes(x= X1, y = X2)) + ggtitle("tSNE") +
+  geom_point()
+
+#How can I colorize each dot so it represents each strike??? 
 ```
 
 ```{r}
 test<-melt(test_data, id="spectrum")
-
-test<- test %>% spread(key="value", value="variable")
-
-ggplot(test, aes(spectrum,value,colour=variable)) + geom_point()
-```
-
-
-
-```{r}
+test<-spread(test,spectrum,value)
+tsne <- Rtsne(test[,-1], dims = 2, perplexity=1, 
+              verbose=FALSE, max_iter = 500)
 lowd_map<- data.frame(tsne$Y)
 lowd_map$label <- factor(test$variable)
 
-ggplot(lowd_map, aes(x= X1, y = X2)) + geom_point() + ggtitle("tSNE")
+ggplot(lowd_map, aes(x= X1, y = X2)) + ggtitle("tSNE") +
+  geom_text(aes(label = label, color = label)) + geom_point(aes(color = label), alpha = 0.5)
 ```
 
+## Train data 1
 
+```{r}
+test<-melt(training_data1, id="spectrum")
+test<-spread(test,spectrum,value)
+tsne <- Rtsne(test[,-1], dims = 2, perplexity=1, 
+              verbose=FALSE, max_iter = 500)
+lowd_map<- data.frame(tsne$Y)
+lowd_map$label <- factor(test$variable)
+
+ggplot(lowd_map, aes(x= X1, y = X2)) + ggtitle("tSNE") +
+  geom_text(aes(label = label, color = label)) + geom_point(aes(color = label), alpha = 0.5)
+```
+
+## Train data 2
+
+```{r}
+test<-melt(training_data2, id="spectrum")
+test<-spread(test,spectrum,value)
+tsne <- Rtsne(test[,-1], dims = 2, perplexity=1, 
+              verbose=FALSE, max_iter = 500,check_duplicates = FALSE)
+lowd_map<- data.frame(tsne$Y)
+lowd_map$label <- factor(test$variable)
+
+ggplot(lowd_map, aes(x= X1, y = X2)) + ggtitle("tSNE") +
+  geom_text(aes(label = label, color = label)) + geom_point(aes(color = label), alpha = 0.5)
+```
+
+## Train data 3
+
+```{r}
+test<-melt(training_data3, id="spectrum")
+test<-spread(test,spectrum,value)
+tsne <- Rtsne(test[,-1], dims = 2, perplexity=1, 
+              verbose=FALSE, max_iter = 500)
+lowd_map<- data.frame(tsne$Y)
+lowd_map$label <- factor(test$variable)
+
+ggplot(lowd_map, aes(x= X1, y = X2)) + ggtitle("tSNE") +
+  geom_text(aes(label = label, color = label,vjust = -0.4,hjust = -0.1),size=4,position=position_jitter(width=15,height=15)) + geom_point(aes(color = label), alpha = 0.5)
+```
